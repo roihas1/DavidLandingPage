@@ -23,8 +23,8 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:py-24">
-        <div className="max-w-xl lg:max-w-2xl">
-          <p className="hero-fade-in mb-3 text-sm font-medium tracking-wide text-amber sm:mb-4 sm:text-base">
+        <div className="min-w-0 max-w-xl lg:max-w-2xl">
+          <p className="hero-fade-in mb-3 font-tanakh text-base font-medium leading-relaxed tracking-wide text-amber sm:mb-4 sm:text-lg md:text-xl">
             {siteContent.tagline}
           </p>
           <h1
@@ -32,9 +32,11 @@ export default function Hero() {
             className="hero-fade-in-delay mb-4 text-[1.75rem] font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.15]"
           >
             {siteContent.heroTitle}
-            <span className="mt-2 block text-xl font-semibold text-white/90 sm:mt-3 sm:text-2xl md:text-3xl">
-              {siteContent.heroHeadline}
-            </span>
+            {siteContent.heroHeadline ? (
+              <span className="mt-2 block text-xl font-semibold text-white/90 sm:mt-3 sm:text-2xl md:text-3xl">
+                {siteContent.heroHeadline}
+              </span>
+            ) : null}
           </h1>
           <p className="hero-fade-in-delay-2 mb-8 max-w-lg text-sm leading-relaxed text-white/75 sm:mb-10 sm:text-base md:text-lg">
             {siteContent.heroSubtext}

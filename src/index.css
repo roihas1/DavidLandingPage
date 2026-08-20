@@ -10,6 +10,7 @@
   --color-offwhite: #f8fafc;
   --color-muted: #64748b;
   --font-sans: "Heebo", "Rubik", system-ui, sans-serif;
+  --font-tanakh: "Noto Serif Hebrew", "Times New Roman", serif;
 }
 
 @layer base {
