@@ -1,0 +1,210 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0f172a;
+  --color-charcoal: #1e293b;
+  --color-amber: #f59e0b;
+  --color-amber-dark: #f59e0b;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1fba59;
+  --color-offwhite: #f8fafc;
+  --color-muted: #64748b;
+  --font-sans: "Heebo", "Rubik", system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+
+  html.a11y-text-lg {
+    font-size: 112.5%;
+  }
+
+  html.a11y-text-xl {
+    font-size: 125%;
+  }
+
+  html.a11y-high-contrast body {
+    @apply bg-black text-white;
+  }
+
+  html.a11y-high-contrast .bg-white,
+  html.a11y-high-contrast .bg-offwhite {
+    @apply bg-black text-white;
+  }
+
+  html.a11y-high-contrast .bg-navy,
+  html.a11y-high-contrast .bg-charcoal {
+    @apply bg-black text-white;
+  }
+
+  html.a11y-high-contrast .text-muted,
+  html.a11y-high-contrast .text-charcoal,
+  html.a11y-high-contrast .text-navy {
+    @apply text-white;
+  }
+
+  html.a11y-high-contrast .text-amber,
+  html.a11y-high-contrast .text-amber-dark {
+    color: #ffdf00 !important;
+  }
+
+  html.a11y-high-contrast .bg-amber {
+    background-color: #ffdf00 !important;
+    color: #000 !important;
+  }
+
+  html.a11y-high-contrast .bg-whatsapp,
+  html.a11y-high-contrast .bg-whatsapp-dark {
+    background-color: #000 !important;
+    border: 2px solid #fff;
+    color: #fff !important;
+  }
+
+  html.a11y-high-contrast .border-slate-200 {
+    @apply border-white;
+  }
+
+  html.a11y-high-contrast [class*="bg-[#"] {
+    background-color: #000 !important;
+    border: 2px solid #fff;
+    color: #fff !important;
+  }
+
+  html.a11y-highlight-links a {
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+    outline: 2px solid var(--color-amber);
+    outline-offset: 2px;
+  }
+
+  body {
+    @apply bg-offwhite text-charcoal font-sans antialiased;
+    margin: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  #root {
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-amber);
+    outline-offset: 2px;
+  }
+
+  main:focus {
+    outline: none;
+  }
+
+  ::selection {
+    background: var(--color-amber);
+    color: #0f172a;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    .hero-fade-in,
+    .hero-fade-in-delay,
+    .hero-fade-in-delay-2 {
+      animation: none;
+      opacity: 1;
+    }
+
+    .scroll-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+@layer utilities {
+  .hero-fade-in {
+    animation: heroFadeIn 0.9s ease-out both;
+  }
+
+  .hero-fade-in-delay {
+    animation: heroFadeIn 0.9s ease-out 0.15s both;
+  }
+
+  .hero-fade-in-delay-2 {
+    animation: heroFadeIn 0.9s ease-out 0.3s both;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .cta-primary {
+    @apply inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-amber px-6 py-3 text-base font-semibold text-navy transition-all duration-200 sm:w-auto;
+  }
+
+  .cta-primary:hover {
+    @apply bg-amber-dark sm:scale-[1.02];
+  }
+
+  .cta-secondary {
+    @apply inline-flex min-h-12 w-full items-center justify-center rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white backdrop-blur-sm transition-all duration-200 sm:w-auto;
+  }
+
+  .cta-secondary:hover {
+    @apply border-white/60 bg-white/20;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  .skip-link {
+    @apply fixed top-0 left-1/2 z-[100] rounded-b-lg bg-amber px-4 py-2 text-sm font-semibold text-navy;
+    transform: translate(-50%, -120%);
+    transition: transform 0.2s ease;
+  }
+
+  .skip-link:focus-visible {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
