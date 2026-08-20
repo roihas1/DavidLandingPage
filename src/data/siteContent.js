@@ -26,7 +26,7 @@ const siteContent = {
   services: [
     {
       title: "תיקוני תקלות חשמל",
-      description: "איתור ותיקון מהיר של קצרים, נפילות מתח ותקלות חוזרות.",
+      description: "איתור ותיקון תקלות חשמל של קצרים, נפילות מתח ותקלות חוזרות.",
       icon: "bolt",
     },
     {
@@ -41,7 +41,7 @@ const siteContent = {
     },
     {
       title: "עמדת טעינה לרכב חשמלי",
-      description: "התקנת עמדת טעינה ביתית — חיבור בטוח ללוח החשמל ועמידה בתקן.",
+      description: "התקנת עמדת טעינה לבית ולעסק — חיבור בטוח ללוח החשמל ועמידה בתקן.",
       icon: "charger",
     },
     {
@@ -66,7 +66,7 @@ const siteContent = {
     { title: "תאורת מטבח", image: null },
     { title: "שדרוג נקודות חשמל", image: null },
     { title: "חיבור מזגן", image: null },
-    { title: "תאורת חוץ", image: null },
+    { title: "תאורת חוץ", image: "/images/gallery-outdoor-light.jpg" },
     { title: "תיקון תקלה דחוף", image: null },
   ],
   testimonials: [
