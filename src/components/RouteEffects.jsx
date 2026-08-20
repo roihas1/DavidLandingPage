@@ -8,7 +8,7 @@ export default function RouteEffects() {
     const isAccessibilityPage = pathname === "/accessibility";
     document.title = isAccessibilityPage
       ? "הצהרת נגישות | דויד שלום פרץ"
-      : "דויד שלום פרץ | הנדסאי חשמל בעל תעודה";
+      : "דויד שלום פרץ | הנדסאי חשמל";
 
     window.scrollTo({ top: 0, behavior: "auto" });
   }, [pathname]);

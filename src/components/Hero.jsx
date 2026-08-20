@@ -1,64 +1,48 @@
 import siteContent from "../data/siteContent";
-import Logo from "./Logo";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[75svh] items-center overflow-hidden bg-navy lg:min-h-[85vh]"
+      className="relative flex min-h-[70svh] flex-col justify-center overflow-hidden bg-navy sm:min-h-[75svh] lg:min-h-[80vh]"
       aria-labelledby="hero-heading"
     >
+      <img
+        src={siteContent.heroImage}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-[68%_center] sm:object-[72%_center]"
+      />
       <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 20% 50%, var(--color-amber) 0%, transparent 50%), radial-gradient(circle at 80% 20%, #334155 0%, transparent 40%)",
-        }}
+        className="absolute inset-0 bg-gradient-to-l from-navy via-navy/85 to-navy/35 sm:from-navy/95 sm:via-navy/70 sm:to-navy/25"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%)",
-          backgroundSize: "24px 24px",
-        }}
+        className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/40"
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-4 py-14 sm:py-16 md:px-6 md:py-24 lg:grid-cols-[1fr_auto] lg:gap-16">
-        <div className="min-w-0">
-          <p className="hero-fade-in mb-3 text-sm font-medium tracking-wide text-white/70 sm:mb-4 md:text-base">
+      <div className="relative mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:py-24">
+        <div className="max-w-xl lg:max-w-2xl">
+          <p className="hero-fade-in mb-3 text-sm font-medium tracking-wide text-amber sm:mb-4 sm:text-base">
             {siteContent.tagline}
           </p>
           <h1
             id="hero-heading"
-            className="hero-fade-in-delay mb-4 max-w-3xl text-3xl font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:text-6xl"
+            className="hero-fade-in-delay mb-4 text-[1.75rem] font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.15]"
           >
             {siteContent.heroTitle}
-            <span className="mt-1 block text-amber sm:mt-2">
+            <span className="mt-2 block text-xl font-semibold text-white/90 sm:mt-3 sm:text-2xl md:text-3xl">
               {siteContent.heroHeadline}
             </span>
           </h1>
-          <p className="hero-fade-in-delay-2 mb-7 max-w-xl text-base leading-relaxed text-white/75 sm:mb-9 sm:text-lg md:text-xl">
+          <p className="hero-fade-in-delay-2 mb-8 max-w-lg text-sm leading-relaxed text-white/75 sm:mb-10 sm:text-base md:text-lg">
             {siteContent.heroSubtext}
           </p>
           <div className="hero-fade-in-delay-2">
             <a href={`tel:${siteContent.phoneLink}`} className="cta-primary">
               התקשרו עכשיו
             </a>
-          </div>
-        </div>
-
-        <div
-          className="hero-fade-in-delay-2 hidden justify-center lg:flex lg:justify-start"
-          aria-hidden="true"
-        >
-          <div className="relative">
-            <div className="absolute -inset-6 rounded-full bg-amber/10 blur-2xl" />
-            <div className="relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm md:p-10">
-              <Logo className="h-40 w-40 text-white md:h-52 md:w-52" showGlow />
-            </div>
           </div>
         </div>
       </div>
