@@ -17,6 +17,10 @@ export default function AccessibilityControl() {
     decreaseText,
     toggleHighContrast,
     toggleHighlightLinks,
+    toggleGrayscale,
+    toggleReadableFont,
+    toggleStopAnimations,
+    toggleBigCursor,
     resetSettings,
   } = useAccessibility();
 
@@ -98,6 +102,42 @@ export default function AccessibilityControl() {
             >
               <span>הדגשת קישורים</span>
               <span aria-hidden="true">{settings.highlightLinks ? "פעיל" : "כבוי"}</span>
+            </button>
+            <button
+              type="button"
+              className={menuItemClass}
+              onClick={toggleGrayscale}
+              aria-pressed={settings.grayscale}
+            >
+              <span>גווני אפור</span>
+              <span aria-hidden="true">{settings.grayscale ? "פעיל" : "כבוי"}</span>
+            </button>
+            <button
+              type="button"
+              className={menuItemClass}
+              onClick={toggleReadableFont}
+              aria-pressed={settings.readableFont}
+            >
+              <span>גופן קריא</span>
+              <span aria-hidden="true">{settings.readableFont ? "פעיל" : "כבוי"}</span>
+            </button>
+            <button
+              type="button"
+              className={menuItemClass}
+              onClick={toggleStopAnimations}
+              aria-pressed={settings.stopAnimations}
+            >
+              <span>עצירת אנימציות</span>
+              <span aria-hidden="true">{settings.stopAnimations ? "פעיל" : "כבוי"}</span>
+            </button>
+            <button
+              type="button"
+              className={menuItemClass}
+              onClick={toggleBigCursor}
+              aria-pressed={settings.bigCursor}
+            >
+              <span>סמן גדול</span>
+              <span aria-hidden="true">{settings.bigCursor ? "פעיל" : "כבוי"}</span>
             </button>
             <button type="button" className={menuItemClass} onClick={resetSettings}>
               <span>איפוס הגדרות</span>

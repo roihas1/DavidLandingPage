@@ -75,7 +75,7 @@ export default function Header() {
           <a
             href={`tel:${siteContent.phoneLink}`}
             className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg bg-amber px-3 text-navy transition-all duration-200 hover:bg-amber-dark lg:gap-2 lg:px-4 lg:py-2"
-            aria-label={`התקשר ל-${siteContent.phone}`}
+            aria-label={`התקשרו אל ${siteContent.phone}`}
           >
             <PhoneIcon className="h-5 w-5" />
             <span className="hidden font-semibold lg:inline">{siteContent.phone}</span>
@@ -85,7 +85,7 @@ export default function Header() {
             ref={menuButtonRef}
             type="button"
             className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-white lg:hidden"
-            aria-label={menuOpen ? "סגור תפריט" : "פתח תפריט"}
+            aria-label={menuOpen ? "סגירת תפריט" : "פתיחת תפריט"}
             aria-controls="mobile-nav"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}

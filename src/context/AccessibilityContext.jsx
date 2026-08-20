@@ -7,6 +7,10 @@ const defaultSettings = {
   fontScale: 0,
   highContrast: false,
   highlightLinks: false,
+  grayscale: false,
+  readableFont: false,
+  stopAnimations: false,
+  bigCursor: false,
 };
 
 function loadSettings() {
@@ -18,11 +22,23 @@ function loadSettings() {
   }
 }
 
-function applySettings({ fontScale, highContrast, highlightLinks }) {
+function applySettings({
+  fontScale,
+  highContrast,
+  highlightLinks,
+  grayscale,
+  readableFont,
+  stopAnimations,
+  bigCursor,
+}) {
   const root = document.documentElement;
   root.classList.remove("a11y-text-lg", "a11y-text-xl");
   root.classList.toggle("a11y-high-contrast", highContrast);
   root.classList.toggle("a11y-highlight-links", highlightLinks);
+  root.classList.toggle("a11y-grayscale", grayscale);
+  root.classList.toggle("a11y-readable-font", readableFont);
+  root.classList.toggle("a11y-stop-animations", stopAnimations);
+  root.classList.toggle("a11y-big-cursor", bigCursor);
 
   if (fontScale === 1) root.classList.add("a11y-text-lg");
   if (fontScale >= 2) root.classList.add("a11y-text-xl");
@@ -64,6 +80,30 @@ export function AccessibilityProvider({ children }) {
       highlightLinks: !current.highlightLinks,
     }));
 
+  const toggleGrayscale = () =>
+    setSettings((current) => ({
+      ...current,
+      grayscale: !current.grayscale,
+    }));
+
+  const toggleReadableFont = () =>
+    setSettings((current) => ({
+      ...current,
+      readableFont: !current.readableFont,
+    }));
+
+  const toggleStopAnimations = () =>
+    setSettings((current) => ({
+      ...current,
+      stopAnimations: !current.stopAnimations,
+    }));
+
+  const toggleBigCursor = () =>
+    setSettings((current) => ({
+      ...current,
+      bigCursor: !current.bigCursor,
+    }));
+
   const resetSettings = () => setSettings(defaultSettings);
 
   return (
@@ -74,6 +114,10 @@ export function AccessibilityProvider({ children }) {
         decreaseText,
         toggleHighContrast,
         toggleHighlightLinks,
+        toggleGrayscale,
+        toggleReadableFont,
+        toggleStopAnimations,
+        toggleBigCursor,
         resetSettings,
       }}
     >

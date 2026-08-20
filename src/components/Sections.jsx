@@ -207,7 +207,7 @@ export function Contact() {
         <ScrollReveal>
           <div className="mb-8 text-center md:mb-12">
             <h2 id="contact-heading" className="mb-3 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-              צור קשר
+              צרו קשר
             </h2>
             <p className="mx-auto max-w-xl px-2 text-sm text-white/70 sm:text-base">
               מוכנים לעזור — התקשרו או שלחו הודעה בוואטסאפ

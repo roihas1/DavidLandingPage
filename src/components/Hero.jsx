@@ -28,24 +28,24 @@ export default function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-4 py-14 sm:py-16 md:px-6 md:py-24 lg:grid-cols-[1fr_auto] lg:gap-16">
         <div className="min-w-0">
-          <p className="hero-fade-in mb-3 text-sm font-medium tracking-wide text-amber sm:mb-4 md:text-base">
+          <p className="hero-fade-in mb-3 text-sm font-medium tracking-wide text-white/70 sm:mb-4 md:text-base">
             {siteContent.tagline}
           </p>
-          <h1 id="hero-heading" className="hero-fade-in-delay mb-4 max-w-3xl text-2xl font-bold leading-snug text-white sm:mb-6 sm:text-3xl sm:leading-tight md:text-4xl lg:text-5xl">
+          <h1
+            id="hero-heading"
+            className="hero-fade-in-delay mb-4 max-w-3xl text-3xl font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:text-6xl"
+          >
             {siteContent.heroTitle}
+            <span className="mt-1 block text-amber sm:mt-2">
+              {siteContent.heroHeadline}
+            </span>
           </h1>
-          <p className="hero-fade-in-delay mb-3 max-w-2xl text-lg font-medium leading-relaxed text-white/90 sm:mb-4 sm:text-xl md:text-2xl">
-            {siteContent.heroHeadline}
-          </p>
-          <p className="hero-fade-in-delay-2 mb-8 max-w-xl text-sm leading-relaxed text-white/70 sm:mb-10 sm:text-base md:text-lg">
+          <p className="hero-fade-in-delay-2 mb-7 max-w-xl text-base leading-relaxed text-white/75 sm:mb-9 sm:text-lg md:text-xl">
             {siteContent.heroSubtext}
           </p>
-          <div className="hero-fade-in-delay-2 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <div className="hero-fade-in-delay-2">
             <a href={`tel:${siteContent.phoneLink}`} className="cta-primary">
-              התקשר עכשיו
-            </a>
-            <a href="#contact" className="cta-secondary">
-              צור קשר
+              התקשרו עכשיו
             </a>
           </div>
         </div>
