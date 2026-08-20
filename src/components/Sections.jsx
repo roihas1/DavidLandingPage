@@ -56,43 +56,41 @@ export function Services() {
 
 export function About() {
   return (
-    <section id="about" className="section-padding scroll-mt-20 bg-offwhite" aria-labelledby="about-heading">
+    <section id="about" className="section-padding scroll-mt-20 bg-offwhite" aria-label="אודות">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <ScrollReveal>
-          <div className="max-w-3xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <div className="flex items-center gap-4 bg-gradient-to-l from-amber/15 via-amber/5 to-transparent px-5 py-5 sm:gap-6 sm:px-8 sm:py-7">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:grid lg:grid-cols-[minmax(240px,320px)_1fr] lg:items-stretch">
+            <div className="flex items-center gap-4 bg-gradient-to-l from-amber/15 via-amber/5 to-transparent px-5 py-5 sm:gap-6 sm:px-8 sm:py-7 lg:flex-col lg:justify-center lg:gap-5 lg:bg-gradient-to-b lg:from-amber/15 lg:via-amber/5 lg:to-transparent lg:px-10 lg:py-12">
               <img
                 src={siteContent.aboutImage}
                 alt={siteContent.businessName}
-                width={112}
-                height={112}
-                className="h-20 w-20 shrink-0 rounded-full object-cover object-[center_22%] ring-4 ring-white shadow-md sm:h-28 sm:w-28"
+                width={176}
+                height={176}
+                className="h-20 w-20 shrink-0 rounded-full object-cover object-[center_22%] ring-4 ring-white shadow-md sm:h-28 sm:w-28 lg:h-44 lg:w-44"
               />
-              <div className="min-w-0">
-                <h2
-                  id="about-heading"
-                  className="text-2xl font-bold text-navy sm:text-3xl md:text-4xl"
-                >
-                  אודות
-                </h2>
-                <p className="mt-0.5 text-sm text-muted sm:text-base">דויד שלום פרץ</p>
+              <div className="min-w-0 text-right lg:text-center">
+                <p className="text-xl font-bold text-navy sm:text-2xl lg:text-3xl">
+                  דויד שלום פרץ
+                </p>
               </div>
             </div>
 
-            <div className="px-5 pb-5 pt-4 sm:px-8 sm:pb-8 sm:pt-5">
-              <p className="mb-5 text-sm leading-relaxed text-charcoal sm:mb-6 sm:text-base">
+            <div className="flex flex-col justify-center px-5 pb-5 pt-4 sm:px-8 sm:pb-8 sm:pt-5 lg:px-10 lg:py-12 xl:px-12">
+              <p className="mb-5 text-sm leading-relaxed text-charcoal sm:mb-6 sm:text-base lg:mb-8 lg:max-w-3xl lg:text-lg lg:leading-8">
                 {siteContent.aboutText}
               </p>
-              <div className="grid grid-cols-2 gap-3 border-t border-slate-200 pt-5">
-                <div className="rounded-xl bg-offwhite px-3 py-3">
-                  <p className="text-2xl font-bold text-amber sm:text-3xl">
+              <div className="grid grid-cols-2 gap-3 border-t border-slate-200 pt-5 sm:gap-4 lg:max-w-2xl lg:gap-5 lg:pt-7">
+                <div className="rounded-xl bg-offwhite px-3 py-3 lg:px-5 lg:py-4">
+                  <p className="text-2xl font-bold text-amber sm:text-3xl lg:text-4xl">
                     {siteContent.yearsExperience}+
                   </p>
-                  <p className="text-xs text-muted sm:text-sm">שנות ניסיון</p>
+                  <p className="text-xs text-muted sm:text-sm lg:text-base">שנות ניסיון</p>
                 </div>
-                <div className="rounded-xl bg-offwhite px-3 py-3">
-                  <p className="text-sm font-semibold text-navy sm:text-base">אזור שירות</p>
-                  <p className="mt-1 text-xs leading-snug text-muted sm:text-sm">
+                <div className="rounded-xl bg-offwhite px-3 py-3 lg:px-5 lg:py-4">
+                  <p className="text-sm font-semibold text-navy sm:text-base lg:text-lg">
+                    אזור שירות
+                  </p>
+                  <p className="mt-1 text-xs leading-snug text-muted sm:text-sm lg:text-base">
                     {siteContent.serviceArea}
                   </p>
                 </div>
@@ -230,7 +228,10 @@ export function Contact() {
               צרו קשר
             </h2>
             <p className="mx-auto max-w-xl px-2 text-sm text-white/70 sm:text-base">
-              מוכנים לעזור — התקשרו או שלחו הודעה בוואטסאפ
+              {siteContent.contactIntro}
+            </p>
+            <p className="mx-auto mt-3 max-w-xl px-2 text-sm font-medium text-amber sm:text-base">
+              {siteContent.contactAvailabilityNote}
             </p>
           </div>
         </ScrollReveal>
@@ -304,23 +305,28 @@ export function Footer() {
 
   return (
     <footer role="contentinfo" className="safe-bottom bg-charcoal py-8 pb-36 text-white/70 sm:pb-8">
-      <div className="mx-auto flex max-w-6xl flex-row flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 text-center md:justify-between md:px-6 md:text-right">
-        <p className="font-semibold text-white">{siteContent.businessName}</p>
-        <a
-          href={`tel:${siteContent.phoneLink}`}
-          className="inline-flex min-h-11 items-center transition-colors hover:text-amber"
-        >
-          {siteContent.phone}
-        </a>
-        <Link
-          to="/accessibility"
-          className="inline-flex min-h-11 items-center text-sm underline underline-offset-4 transition-colors hover:text-amber"
-        >
-          {siteContent.footer.accessibilityLink}
-        </Link>
-        <p className="max-w-xs text-xs sm:max-w-none sm:text-sm">
-          © {year} {siteContent.businessName}. {siteContent.footer.copyright}.
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 text-center md:px-6">
+        <p className="font-tanakh text-base font-medium tracking-wide text-amber sm:text-lg">
+          {siteContent.footerMotto}
         </p>
+        <div className="flex w-full flex-row flex-wrap items-center justify-center gap-x-6 gap-y-2 md:justify-between md:text-right">
+          <p className="font-semibold text-white">{siteContent.businessName}</p>
+          <a
+            href={`tel:${siteContent.phoneLink}`}
+            className="inline-flex min-h-11 items-center transition-colors hover:text-amber"
+          >
+            {siteContent.phone}
+          </a>
+          <Link
+            to="/accessibility"
+            className="inline-flex min-h-11 items-center text-sm underline underline-offset-4 transition-colors hover:text-amber"
+          >
+            {siteContent.footer.accessibilityLink}
+          </Link>
+          <p className="max-w-xs text-xs sm:max-w-none sm:text-sm">
+            © {year} {siteContent.businessName}. {siteContent.footer.copyright}.
+          </p>
+        </div>
       </div>
     </footer>
   );

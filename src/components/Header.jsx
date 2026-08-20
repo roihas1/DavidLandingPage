@@ -72,14 +72,20 @@ export default function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 lg:gap-3">
-          <a
-            href={`tel:${siteContent.phoneLink}`}
-            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg bg-amber px-3 text-navy transition-all duration-200 hover:bg-amber-dark lg:gap-2 lg:px-4 lg:py-2"
-            aria-label={`התקשרו אל ${siteContent.phone}`}
-          >
-            <PhoneIcon className="h-5 w-5" />
-            <span className="hidden font-semibold lg:inline">{siteContent.phone}</span>
-          </a>
+          <div className="flex flex-col items-center gap-0.5">
+            <a
+              href={`tel:${siteContent.phoneLink}`}
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg bg-amber px-3 text-navy transition-all duration-200 hover:bg-amber-dark lg:gap-2 lg:px-4 lg:py-2"
+              aria-label={`התקשרו אל ${siteContent.phone}. ${siteContent.callShabbatNote}`}
+              title={siteContent.callShabbatNote}
+            >
+              <PhoneIcon className="h-5 w-5" />
+              <span className="hidden font-semibold lg:inline">{siteContent.phone}</span>
+            </a>
+            <span className="max-w-[7rem] text-center text-[9px] leading-tight text-white/50 lg:max-w-none lg:text-[10px]">
+              {siteContent.callShabbatNote}
+            </span>
+          </div>
 
           <button
             ref={menuButtonRef}

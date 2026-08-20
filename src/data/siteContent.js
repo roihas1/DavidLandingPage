@@ -1,8 +1,9 @@
 const siteContent = {
-  businessName: "ד.ש.פ הנדסת חשמל",
+  businessName: "דויד פרץ הנדסת חשמל",
   heroTitle: "פתרונות חשמל מתקדמים בראש שקט",
-  tagline: "בְּשֵׁם הַשֵּׁם נַעֲשֶׂה וְנַצְלִיחַ",
+  tagline: "עֵסֶק זֶה נִבְנָה בְּחַסְדֵי ה׳",
   heroHeadline: "",
+  footerMotto: "בְּשֵׁם הַשֵּׁם נַעֲשֶׂה וְנַצְלִיחַ",
   heroSubtext:
     "פתרון תקלות, התקנות, תשתיות, שדרוגי לוחות ועמדות טעינה ביתיות לבתים ולעסקים וכל עבודות החשמל באשדוד, אשקלון, השפלה והמרכז. מחיר שקוף מראש — בלי הפתעות בסוף.",
   phone: "053-7173744",
@@ -11,6 +12,10 @@ const siteContent = {
   whatsappMessage:
     "היי דויד, מעוניינים בעבודה, הגענו אלייך דרך האתר, נשמח שתחזור אלינו.",
   serviceArea: "אשדוד, אשקלון, השפלה והמרכז",
+  contactIntro: "מוכנים לעזור — התקשרו או שלחו הודעה בוואטסאפ",
+  contactAvailabilityNote:
+    "*נא לא להתקשר ולא לשלוח הודעות בשבתות ובחגים.",
+  callShabbatNote: "* לא להתקשר בשבת וחג",
   yearsExperience: 5,
   aboutImage: "/images/david.jpg",
   heroImage: "/images/hero-bg.jpg",

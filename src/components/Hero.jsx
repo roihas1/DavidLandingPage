@@ -45,6 +45,9 @@ export default function Hero() {
             <a href={`tel:${siteContent.phoneLink}`} className="cta-primary">
               התקשרו עכשיו
             </a>
+            <p className="mt-2 text-xs text-white/55 sm:text-sm">
+              {siteContent.callShabbatNote}
+            </p>
           </div>
         </div>
       </div>
