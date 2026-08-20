@@ -157,14 +157,14 @@ export default function AccessibilityControl() {
       <button
         ref={buttonRef}
         type="button"
-        className="accessibility-toggle flex h-12 min-h-12 min-w-12 items-center justify-center rounded-full bg-[#0066cc] text-white shadow-lg transition-transform hover:bg-[#005bb5] active:scale-95 sm:w-auto sm:gap-2 sm:px-5"
+        className="accessibility-toggle flex h-12 w-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#0066cc] text-sm font-semibold text-white shadow-lg transition-transform hover:bg-[#005bb5] active:scale-95 sm:w-[8.5rem] sm:px-4"
         aria-label={open ? "סגירת תפריט נגישות" : "פתיחת תפריט נגישות"}
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => setOpen((value) => !value)}
       >
-        <AccessibilityIcon className="text-2xl leading-none" />
-        <span className="hidden font-semibold sm:inline">נגישות</span>
+        <AccessibilityIcon className="text-xl leading-none" />
+        <span className="hidden sm:inline">נגישות</span>
       </button>
     </div>
   );

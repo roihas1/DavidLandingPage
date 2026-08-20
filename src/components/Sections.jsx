@@ -59,23 +59,43 @@ export function About() {
     <section id="about" className="section-padding scroll-mt-20 bg-offwhite" aria-labelledby="about-heading">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
         <ScrollReveal>
-          <div className="max-w-3xl rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-            <h2 id="about-heading" className="mb-4 text-2xl font-bold text-navy sm:text-3xl md:text-4xl">
-              אודות
-            </h2>
-            <p className="mb-6 text-sm leading-relaxed text-charcoal sm:text-base">
-              {siteContent.aboutText}
-            </p>
-            <div className="flex flex-col gap-4 border-t border-slate-200 pt-6 sm:flex-row sm:gap-10">
-              <div className="border-r-4 border-amber pr-4">
-                <p className="text-3xl font-bold text-amber">
-                  {siteContent.yearsExperience}+
-                </p>
-                <p className="text-sm text-muted">שנות ניסיון</p>
+          <div className="max-w-3xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <div className="flex items-center gap-4 bg-gradient-to-l from-amber/15 via-amber/5 to-transparent px-5 py-5 sm:gap-6 sm:px-8 sm:py-7">
+              <img
+                src={siteContent.aboutImage}
+                alt={siteContent.businessName}
+                width={112}
+                height={112}
+                className="h-20 w-20 shrink-0 rounded-full object-cover object-[center_22%] ring-4 ring-white shadow-md sm:h-28 sm:w-28"
+              />
+              <div className="min-w-0">
+                <h2
+                  id="about-heading"
+                  className="text-2xl font-bold text-navy sm:text-3xl md:text-4xl"
+                >
+                  אודות
+                </h2>
+                <p className="mt-0.5 text-sm text-muted sm:text-base">דויד שלום פרץ</p>
               </div>
-              <div className="border-r-4 border-amber pr-4">
-                <p className="text-lg font-semibold text-navy">אזור שירות</p>
-                <p className="text-sm text-muted">{siteContent.serviceArea}</p>
+            </div>
+
+            <div className="px-5 pb-5 pt-4 sm:px-8 sm:pb-8 sm:pt-5">
+              <p className="mb-5 text-sm leading-relaxed text-charcoal sm:mb-6 sm:text-base">
+                {siteContent.aboutText}
+              </p>
+              <div className="grid grid-cols-2 gap-3 border-t border-slate-200 pt-5">
+                <div className="rounded-xl bg-offwhite px-3 py-3">
+                  <p className="text-2xl font-bold text-amber sm:text-3xl">
+                    {siteContent.yearsExperience}+
+                  </p>
+                  <p className="text-xs text-muted sm:text-sm">שנות ניסיון</p>
+                </div>
+                <div className="rounded-xl bg-offwhite px-3 py-3">
+                  <p className="text-sm font-semibold text-navy sm:text-base">אזור שירות</p>
+                  <p className="mt-1 text-xs leading-snug text-muted sm:text-sm">
+                    {siteContent.serviceArea}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

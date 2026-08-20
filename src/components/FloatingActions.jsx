@@ -16,7 +16,7 @@ export default function FloatingActions() {
         href={siteContent.whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex h-12 min-h-12 min-w-12 items-center justify-center gap-2 rounded-full bg-whatsapp text-sm font-semibold text-navy shadow-lg transition-transform hover:bg-whatsapp-dark active:scale-95 sm:w-auto sm:px-5"
+        className="flex h-12 w-12 shrink-0 items-center justify-center gap-2 rounded-full bg-whatsapp text-sm font-semibold text-navy shadow-lg transition-transform hover:bg-whatsapp-dark active:scale-95 sm:w-[8.5rem] sm:px-4"
         aria-label="שליחת הודעה בוואטסאפ, נפתח בחלון חדש"
       >
         <svg
